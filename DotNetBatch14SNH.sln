@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetBatch14SNH.ConsoleApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetBatch14SNH.RestApi", "DotNetBatch14SNH.RestApi\DotNetBatch14SNH.RestApi.csproj", "{EEB29C4E-F578-4077-B05A-970AB034C886}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POS", "POS\POS.csproj", "{B7664B56-A302-4A91-9A03-61386034D636}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MIniPosSystemSNH.RestApi", "POS\MIniPosSystemSNH.RestApi.csproj", "{B7664B56-A302-4A91-9A03-61386034D636}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KpayTransferSystemSNH.RestApi", "KpayTransferSystemSNH\KpayTransferSystemSNH.RestApi.csproj", "{91DE3C33-AA4F-4A48-9FFF-3105427086C1}"
 EndProject
