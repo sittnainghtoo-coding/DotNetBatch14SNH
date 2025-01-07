@@ -52,7 +52,7 @@ public class AdoDotNetExample
 
         connection.Open();
         SqlCommand cmd = new SqlCommand($"Select * from Tbl_Blog where BlogId = '{id}'", connection);
-        SqlDataAdapter adapter = new SqlDataAdapter();
+        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
         DataTable dt = new DataTable();
         adapter.Fill(dt);
 

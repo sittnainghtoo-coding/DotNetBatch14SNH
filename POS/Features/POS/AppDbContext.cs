@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MiniPosSystemSNH.RestApi.Features.POS;
+using MIniPosSystemSNH.RestApi.Features.POS;
 using System.Collections.Generic;
 
 namespace MiniPosSystemSNH.RestApi.Features.POS;
@@ -24,5 +25,8 @@ public class AppDbContext : DbContext
         }
     }
     public DbSet<ProductModel>? Product { get; set; }
-    public DbSet<TransactionModel>? Transaction { get; set; }
+    public DbSet<SaleModel>? Sale { get; set; }
+    public DbSet<CategoryModel>? Category { get; set; }
+
+    public DbSet<SaleDetailsModel>? SaleDetails { get; set; }
 }

@@ -1,6 +1,7 @@
-namespace DotNetBatch14SNH.RestApi
+namespace DotNetBatch14SNH.RestApi.Features.WeatherForecast
 {
-    public class WeatherForecast
+    public class WeatherForecastModel
+
     {
         public DateOnly Date { get; set; }
 

@@ -134,6 +134,5 @@ namespace MiniPosSystemSNH.RestApi.Features.POS
 
             return model;
         }
-
     }
 }
