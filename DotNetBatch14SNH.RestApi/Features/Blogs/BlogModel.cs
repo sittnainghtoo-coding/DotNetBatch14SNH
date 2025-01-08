@@ -10,6 +10,7 @@
         public string? BlogContent { get; set; }
     }
 
+
     public class BlogResponseModel
     {
         public bool IsSuccess { get; set; }

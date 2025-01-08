@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetBatch14SNH.RestApi.Features.Blogs
@@ -7,15 +8,15 @@ namespace DotNetBatch14SNH.RestApi.Features.Blogs
     [ApiController]
     public class BlogController : ControllerBase
     {
-        private readonly BlogService _blogService;
+        private readonly IBlogService _blogService;
 
         public BlogController()
         {
-            _blogService = new BlogService();
+            _blogService = new BlogDapperService();
         }
 
         [HttpGet]
-        public IActionResult GetBlogs() 
+        public IActionResult GetBlogs()
         {
             var model = _blogService.GetBlogs();
             return Ok(model);
@@ -25,7 +26,7 @@ namespace DotNetBatch14SNH.RestApi.Features.Blogs
         public IActionResult GetBlog(string id)
         {
             var model = _blogService.GetBlog(id);
-            if(model is null)
+            if (model is null)
             {
                 return NotFound("No data Found");
             }
@@ -43,14 +44,21 @@ namespace DotNetBatch14SNH.RestApi.Features.Blogs
             return Ok(model);
         }
 
-        [HttpPut]
-        public IActionResult UpdateBlog()
+        [HttpPut("{id}")]
+        public IActionResult UpsertBlog(string id,BlogModel requestModel)
         {
+            requestModel.BlogId = id;
+
+            var model = _blogService.UpdateBlog(requestModel);
+            if (!model.IsSuccess)
+            {
+                return BadRequest(model);
+            }
             return Ok();
         }
 
         [HttpPatch("{id}")]
-        public IActionResult PatchBlog(string id, BlogModel requestModel)
+        public IActionResult UpdateBlog(string id, BlogModel requestModel)
         {
             requestModel.BlogId = id;
             var model = _blogService.UpdateBlog(requestModel);
@@ -61,10 +69,17 @@ namespace DotNetBatch14SNH.RestApi.Features.Blogs
             return Ok(model);
         }
 
-        [HttpDelete]
-        public IActionResult DeleteBlog() 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteBlog(string id,BlogModel requestModel) 
         {
-            return Ok();
+
+            requestModel.BlogId = id;
+            var model = _blogService.DeleteBlog(id);
+            if (!model.IsSuccess)
+            {
+                return BadRequest(model);
+            }
+            return Ok(model);
         }
     }
 }
