@@ -12,7 +12,7 @@ namespace DotNetBatch14SNH.RestApi.Features.Blogs
 
         public BlogController()
         {
-            _blogService = new BlogDapperService();
+            _blogService = new BlogEFCoreService();
         }
 
         [HttpGet]

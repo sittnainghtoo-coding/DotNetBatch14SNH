@@ -116,25 +116,47 @@ namespace DotNetBatch14SNH.RestApi.Features.Blogs
                     Message = "No data found."
                 };
             }
-            if (string.IsNullOrEmpty(requestModel.BlogTitle))
+            //if (string.IsNullOrEmpty(requestModel.BlogTitle))
+            //{
+            //    requestModel.BlogTitle = item.BlogTitle;
+            //}
+            //if (string.IsNullOrEmpty(requestModel.BlogAuthor))
+            //{
+            //    requestModel.BlogAuthor = item.BlogAuthor;
+            //}
+            //if (string.IsNullOrEmpty(requestModel.BlogContent))
+            //{
+            //    requestModel.BlogContent = item.BlogContent;
+            //}
+
+            string conditions = string.Empty;
+
+            if (!string.IsNullOrEmpty(requestModel.BlogTitle))
             {
-                requestModel.BlogTitle = item.BlogTitle;
+                conditions = " [BlogTitle] = @BlogTitle, ";
             }
-            if (string.IsNullOrEmpty(requestModel.BlogAuthor))
+            if (!string.IsNullOrEmpty(requestModel.BlogAuthor))
             {
-                requestModel.BlogAuthor = item.BlogAuthor;
+
+                conditions = " [BlogAuthor] = @BlogAuthor, ";
             }
-            if (string.IsNullOrEmpty(requestModel.BlogContent))
+            if (!string.IsNullOrEmpty(requestModel.BlogContent))
             {
-                requestModel.BlogContent = item.BlogContent;
+                conditions = " [BlogContent] = @BlogContent, ";
             }
 
+            if(conditions.Length == 0)
+            {
+                throw new Exception("Invalid Parameters.");
+            }
 
-            string query = @"UPDATE [dbo].[Tbl_Blog]
+            conditions = conditions.Substring(0, conditions.Length - 2);
+
+
+
+            string query = $@"UPDATE [dbo].[Tbl_Blog]
 SET
-    [BlogTitle] = @BlogTitle,
-    [BlogAuthor] = @BlogAuthor,
-    [BlogContent] = @BlogContent
+    {conditions}
 WHERE
     BlogId = @BlogId";
 
