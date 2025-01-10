@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetBatch14SNH.RestApi2.Features
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] //endpoint
     [ApiController]
     public class BlogController : ControllerBase
     {
@@ -15,33 +15,84 @@ namespace DotNetBatch14SNH.RestApi2.Features
             _blogService = new BlogEFCoreService();
         }
 
-        [HttpGet]
+        [HttpGet] //attribute
         public IActionResult GetBlogs()
         {
-            var model = _blogService.GetBlogs();
-            return Ok(model);
+            try
+            {
+                var lst = _blogService.GetBlogs();
+                //throw new Exception("Helll");
+                BlogListResponseModel model = new BlogListResponseModel()
+                {
+                    IsSuccess = true,
+                    Data = lst,
+                    Message = "Success"
+
+                }; 
+                
+                return Ok(model);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, new BlogResponseModel
+                {
+                    Message = ex.ToString(),
+                });
+            }
+            
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}")] //attribute
         public IActionResult GetBlog(string id)
         {
-            var model = _blogService.GetBlog(id);
-            if (model is null)
+            try
             {
-                return NotFound("No data Found");
+                var model = _blogService.GetBlog(id);
+                if (model is null)
+                {
+                    return NotFound(new BlogListResponseModel
+                    {
+                        Message = "no data found"
+                    });
+                }
+                return Ok(new BlogResponseModel
+                {
+                    Message = "Success",
+                    IsSuccess = true,
+                    Data = model
+                });
             }
-            return Ok(model);
+            catch (Exception ex)
+            {
+                return StatusCode(500, new BlogResponseModel
+                {
+                    Message = ex.ToString()
+                });
+               
+            }
         }
 
         [HttpPost]
         public IActionResult CreateBlog([FromBody] BlogModel requestModel)
         {
-            var model = _blogService.CreateBlog(requestModel);
-            if (!model.IsSuccess)
+            try
             {
-                return BadRequest(model);
+                var model = _blogService.CreateBlog(requestModel);
+                if (!model.IsSuccess)
+                {
+                    return BadRequest(model);
+                }
+                return Ok(model);
             }
-            return Ok(model);
+            catch (Exception ex)
+            {
+                return StatusCode(500, new BlogResponseModel
+                {
+                    Message = ex.ToString(),
+                });
+            }
+            
         }
 
         [HttpPut("{id}")]
@@ -73,13 +124,24 @@ namespace DotNetBatch14SNH.RestApi2.Features
         public IActionResult DeleteBlog(string id, BlogModel requestModel)
         {
 
-            requestModel.BlogId = id;
-            var model = _blogService.DeleteBlog(id);
-            if (!model.IsSuccess)
+            try
             {
-                return BadRequest(model);
+                requestModel.BlogId = id;
+                var model = _blogService.DeleteBlog(id);
+                if (!model.IsSuccess)
+                {
+                    return BadRequest(model);
+                }
+                return Ok(model);
             }
-            return Ok(model);
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, new BlogListResponseModel
+                {
+                    Message = ex.ToString()
+                });
+            }
         }
     }
 }
