@@ -29,4 +29,5 @@ public class AppDbContext : DbContext
     public DbSet<CategoryModel>? Category { get; set; }
 
     public DbSet<SaleDetailsModel>? SaleDetails { get; set; }
+    public object Blogs { get; set; }
 }

@@ -133,16 +133,16 @@ namespace DotNetBatch14SNH.RestApi.Features.Blogs
 
             if (!string.IsNullOrEmpty(requestModel.BlogTitle))
             {
-                conditions = " [BlogTitle] = @BlogTitle, ";
+                conditions += " [BlogTitle] = @BlogTitle, ";
             }
             if (!string.IsNullOrEmpty(requestModel.BlogAuthor))
             {
 
-                conditions = " [BlogAuthor] = @BlogAuthor, ";
+                conditions += " [BlogAuthor] = @BlogAuthor, ";
             }
             if (!string.IsNullOrEmpty(requestModel.BlogContent))
             {
-                conditions = " [BlogContent] = @BlogContent, ";
+                conditions += " [BlogContent] = @BlogContent, ";
             }
 
             if(conditions.Length == 0)

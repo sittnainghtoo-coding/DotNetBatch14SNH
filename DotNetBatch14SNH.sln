@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MIniPosSystemSNH.RestApi", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KpayTransferSystemSNH.RestApi", "KpayTransferSystemSNH\KpayTransferSystemSNH.RestApi.csproj", "{91DE3C33-AA4F-4A48-9FFF-3105427086C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBatch14SNH.ConsoleApp1", "DotNetBatch14SNH.ConsoleApp1\DotNetBatch14SNH.ConsoleApp1.csproj", "{55C8D9D4-BB63-41F9-80BE-F92D5C760E61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetBatch14SNH.ConsoleApp1", "DotNetBatch14SNH.ConsoleApp1\DotNetBatch14SNH.ConsoleApp1.csproj", "{55C8D9D4-BB63-41F9-80BE-F92D5C760E61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBatch14SNH-Shared", "DotNetBatch14SNH-Shared\DotNetBatch14SNH-Shared.csproj", "{856D3641-FBBF-42C9-A444-5DCF249869C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBatch14SNH.RestApi2", "DotNetBatch14SNH.RestApi2\DotNetBatch14SNH.RestApi2.csproj", "{B27C6BEA-0424-4745-A8AB-C7A6238BF07F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{55C8D9D4-BB63-41F9-80BE-F92D5C760E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55C8D9D4-BB63-41F9-80BE-F92D5C760E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55C8D9D4-BB63-41F9-80BE-F92D5C760E61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{856D3641-FBBF-42C9-A444-5DCF249869C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{856D3641-FBBF-42C9-A444-5DCF249869C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{856D3641-FBBF-42C9-A444-5DCF249869C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{856D3641-FBBF-42C9-A444-5DCF249869C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B27C6BEA-0424-4745-A8AB-C7A6238BF07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B27C6BEA-0424-4745-A8AB-C7A6238BF07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B27C6BEA-0424-4745-A8AB-C7A6238BF07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B27C6BEA-0424-4745-A8AB-C7A6238BF07F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
