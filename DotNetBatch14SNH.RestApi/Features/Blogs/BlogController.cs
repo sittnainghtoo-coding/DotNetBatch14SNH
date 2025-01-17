@@ -54,7 +54,7 @@ namespace DotNetBatch14SNH.RestApi.Features.Blogs
             {
                 return BadRequest(model);
             }
-            return Ok();
+            return Ok(model);
         }
 
         [HttpPatch("{id}")]

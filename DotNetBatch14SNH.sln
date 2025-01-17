@@ -15,11 +15,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KpayTransferSystemSNH.RestA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetBatch14SNH.ConsoleApp1", "DotNetBatch14SNH.ConsoleApp1\DotNetBatch14SNH.ConsoleApp1.csproj", "{55C8D9D4-BB63-41F9-80BE-F92D5C760E61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBatch14SNH-Shared", "DotNetBatch14SNH-Shared\DotNetBatch14SNH-Shared.csproj", "{856D3641-FBBF-42C9-A444-5DCF249869C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetBatch14SNH-Shared", "DotNetBatch14SNH-Shared\DotNetBatch14SNH-Shared.csproj", "{856D3641-FBBF-42C9-A444-5DCF249869C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBatch14SNH.RestApi2", "DotNetBatch14SNH.RestApi2\DotNetBatch14SNH.RestApi2.csproj", "{B27C6BEA-0424-4745-A8AB-C7A6238BF07F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetBatch14SNH.RestApi2", "DotNetBatch14SNH.RestApi2\DotNetBatch14SNH.RestApi2.csproj", "{B27C6BEA-0424-4745-A8AB-C7A6238BF07F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBatch14SNH.ConsoleApp4", "DotNetBatch14SNH.ConsoleApp4\DotNetBatch14SNH.ConsoleApp4.csproj", "{C618E356-8E8E-4ED6-9552-32A38ABB6A3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetBatch14SNH.ConsoleApp4", "DotNetBatch14SNH.ConsoleApp4\DotNetBatch14SNH.ConsoleApp4.csproj", "{C618E356-8E8E-4ED6-9552-32A38ABB6A3F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MIniMedicalStoreManagementSystem.RestApi", "MIniMedicalStoreManagementSystem.RestApi\MIniMedicalStoreManagementSystem.RestApi.csproj", "{D85A726B-799E-4907-AB67-4ACA4839B02A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniMedicalStoreManagementSystem.RestApi1", "MiniMedicalStoreManagementSystem.RestApi1\MiniMedicalStoreManagementSystem.RestApi1.csproj", "{05FF525D-3708-442E-98EB-588465658B22}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniMedicalStoreManagementSystem.ConsoleApp", "MiniMedicalStoreManagementSystem.ConsoleApp\MiniMedicalStoreManagementSystem.ConsoleApp.csproj", "{89EB187B-1501-4E45-A77F-BBFB94089EE1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetBatch14SNH.MvcApp", "DotNetBatch14SNH.MvcApp\DotNetBatch14SNH.MvcApp.csproj", "{74973530-58BC-4934-A1D7-4FA98B43C0A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBatch14SNH.DbService", "DotNetBatch14SNH.DbService\DotNetBatch14SNH.DbService.csproj", "{3C268E88-03E4-42CE-9E8C-6BB96BEF845B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +73,26 @@ Global
 		{C618E356-8E8E-4ED6-9552-32A38ABB6A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C618E356-8E8E-4ED6-9552-32A38ABB6A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C618E356-8E8E-4ED6-9552-32A38ABB6A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D85A726B-799E-4907-AB67-4ACA4839B02A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D85A726B-799E-4907-AB67-4ACA4839B02A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D85A726B-799E-4907-AB67-4ACA4839B02A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D85A726B-799E-4907-AB67-4ACA4839B02A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05FF525D-3708-442E-98EB-588465658B22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05FF525D-3708-442E-98EB-588465658B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05FF525D-3708-442E-98EB-588465658B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05FF525D-3708-442E-98EB-588465658B22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89EB187B-1501-4E45-A77F-BBFB94089EE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89EB187B-1501-4E45-A77F-BBFB94089EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89EB187B-1501-4E45-A77F-BBFB94089EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89EB187B-1501-4E45-A77F-BBFB94089EE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74973530-58BC-4934-A1D7-4FA98B43C0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74973530-58BC-4934-A1D7-4FA98B43C0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74973530-58BC-4934-A1D7-4FA98B43C0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74973530-58BC-4934-A1D7-4FA98B43C0A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C268E88-03E4-42CE-9E8C-6BB96BEF845B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C268E88-03E4-42CE-9E8C-6BB96BEF845B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C268E88-03E4-42CE-9E8C-6BB96BEF845B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C268E88-03E4-42CE-9E8C-6BB96BEF845B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

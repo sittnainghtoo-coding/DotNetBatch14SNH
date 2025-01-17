@@ -5,6 +5,10 @@ namespace DotNetBatch14SNH_Shared;
 
 public class AppDbContext : DbContext
 {
+    //public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    //{
+    //}
+
     private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder;
 
     public AppDbContext()
