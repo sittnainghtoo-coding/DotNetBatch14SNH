@@ -15,8 +15,10 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 
 //builder.Services.AddScoped<IBlogService, BlogDapperService>();
 //builder.Services.AddScoped<IBlogService, BlogEFCoreService>();
-builder.Services.AddScoped<IBlogService, BlogService>();
-
+builder.Services.AddControllersWithViews().AddJsonOptions(opt =>
+{
+	opt.JsonSerializerOptions.PropertyNamingPolicy = null;
+});
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
