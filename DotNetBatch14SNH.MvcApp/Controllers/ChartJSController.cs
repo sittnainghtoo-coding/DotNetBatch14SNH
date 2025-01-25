@@ -14,5 +14,33 @@ namespace DotNetBatch14SNH.MvcApp.Controllers
             };
             return View(model);
         }
+
+        // Controller
+        public IActionResult FloatingBarChartJS()
+        {
+            FloatingBarChartJSModel model = new FloatingBarChartJSModel
+            {
+                Data = new List<FloatingBarDataset>
+        {
+            new FloatingBarDataset
+            {
+                Label = "Dataset 1",
+                Data = new List<BarRange>
+                {
+                    new BarRange { Min = -3, Max = 3 },
+                    new BarRange { Min = -6, Max = -2 },
+                    new BarRange { Min = -8, Max = -4 },
+                    new BarRange { Min = -5, Max = -1 }
+                },
+                BackgroundColor = "rgba(75, 192, 192, 0.2)",
+                BorderColor = "rgba(75, 192, 192, 1)"
+            }
+        },
+                Labels = new string[] { "Group 1", "Group 2", "Group 3", "Group 4" }
+            };
+
+            return View(model);
+        }
+
     }
 }

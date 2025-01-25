@@ -25,6 +25,36 @@ namespace DotNetBatch14SNH.MvcApp.Controllers
             return View(model);
         }
 
+        public IActionResult FunnelChart(string chartType = "pie")
+        {
+            FunnelChartModel model = new FunnelChartModel();
+
+            if (chartType == "pie")
+            {
+                model.Series = new int[] { 44, 55, 13, 43, 22 };
+                model.Labels = new string[] { "Team A", "Team B", "Team C", "Team D", "Team E" };
+                model.ChartType = "pie";
+            }
+            else if (chartType == "funnel")
+            {
+                model.FunnelData = new int[] { 1380, 1100, 990, 880, 740, 548, 330, 200 };
+                model.FunnelCategories = new string[]
+                {
+            "Sourced",
+            "Screened",
+            "Assessed",
+            "HR Interview",
+            "Technical",
+            "Verify",
+            "Offered",
+            "Hired"
+                };
+                model.ChartType = "funnel";
+            }
+
+            return View(model);
+        }
+
 
     }
 }

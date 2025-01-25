@@ -23,6 +23,7 @@ public class BlogService : IBlogService
         _sqlConnectionStringBuilder = new SqlConnectionStringBuilder(connectionString);
     }
 
+
     public BlogService(IConfiguration configuration)
     {
         _sqlConnectionStringBuilder = new SqlConnectionStringBuilder(configuration.GetConnectionString("DbConnection"));

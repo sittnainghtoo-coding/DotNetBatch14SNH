@@ -1,0 +1,37 @@
+﻿@model LineHighChartModel
+@using Newtonsoft.Json;
+
+<div id="lineChartContainer"></div>
+
+<script>
+    Highcharts.chart('lineChartContainer', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Line Chart Example'
+        },
+        xAxis: {
+            categories: @Html.Raw(JsonConvert.SerializeObject(Model.Labels))
+            },
+        yAxis: {
+            title: {
+                text: 'Values'
+            }
+        },
+        series: [
+            {
+                name: 'Dataset 1',
+                data: @Html.Raw(JsonConvert.SerializeObject(Model.Dataset1)),
+                color: 'red'
+            },
+            {
+                name: 'Dataset 2',
+                data: @Html.Raw(JsonConvert.SerializeObject(Model.Dataset2)),
+                color: 'blue'
+            }
+        ]
+    });
+</script>
+
+

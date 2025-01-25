@@ -12,7 +12,7 @@ namespace DotNetBatch14SNH.RestApi.Features.Blogs
 
         public BlogController()
         {
-            _blogService = new BlogEFCoreService();
+            _blogService = new BlogService();
         }
 
         [HttpGet]
@@ -34,6 +34,8 @@ namespace DotNetBatch14SNH.RestApi.Features.Blogs
         }
 
         [HttpPost]
+
+        //what mean [FromBody]
         public IActionResult CreateBlog([FromBody] BlogModel requestModel)
         {
             var model = _blogService.CreateBlog(requestModel);

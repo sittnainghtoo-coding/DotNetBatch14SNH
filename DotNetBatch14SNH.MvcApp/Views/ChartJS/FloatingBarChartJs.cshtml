@@ -1,0 +1,47 @@
+﻿// View (FloatingBarChartJS.cshtml)
+@model FloatingBarChartJSModel
+@using Newtonsoft.Json;
+
+@{
+    var labels = Model.Labels;
+    var datasets = Model.Data.Select(dataset => new
+    {
+        label = dataset.Label,
+        data = dataset.Data.Select(range => new[] { range.Min, range.Max }),
+        backgroundColor = dataset.BackgroundColor,
+        borderColor = dataset.BorderColor,
+    });
+}
+
+<canvas id="floatingBarChart" width="400" height="200"></canvas>
+<script>
+    const ctx = document.getElementById('floatingBarChart').getContext('2d');
+    const config = {
+        type: 'bar',
+        data: {
+            labels: @Html.Raw(JsonConvert.SerializeObject(labels)),
+            datasets: @Html.Raw(JsonConvert.SerializeObject(datasets))
+            },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Chart.js Floating Bar Chart'
+                }
+            },
+            scales: {
+                x: {
+                    stacked: true
+                },
+                y: {
+                    stacked: true
+                }
+            }
+        }
+    };
+    const floatingBarChart = new Chart(ctx, config);
+</script>

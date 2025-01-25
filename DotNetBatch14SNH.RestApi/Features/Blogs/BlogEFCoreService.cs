@@ -8,6 +8,7 @@ namespace DotNetBatch14SNH.RestApi.Features.Blogs
         private readonly AppDbContext _db;
         public BlogEFCoreService() 
         {
+
             _db = new AppDbContext();
         }
 

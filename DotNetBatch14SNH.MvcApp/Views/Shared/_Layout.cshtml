@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DotNetBatch14SNH.MvcApp.styles.css" asp-append-version="true" />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
     <header>
@@ -44,16 +45,12 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @* apexchart *@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    @* chartjs *@
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    @* highcharts *@
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    @* canvasjs *@
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.8/dist/notiflix-aio-3.2.8.min.js"></script>
+
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+
     @await RenderSectionAsync("scripts", required: false)
 </body>
 </html>
