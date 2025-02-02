@@ -48,7 +48,7 @@ namespace DotNetBatch14SNH.Login.Middlewares
                 return;
             }
 
-            var permission = await GetPermission(tokenModel.RoleId, endpoint);
+            var permission = await GetPermission(tokenModel.RoleCode, endpoint);
 
             if (permission is null)
             {
@@ -60,19 +60,19 @@ namespace DotNetBatch14SNH.Login.Middlewares
             await _next(context);
         }
 
-        private async Task<PermissionModel> GetPermission(string roleId, string endpoint)
+        private async Task<PermissionModel> GetPermission(string roleCode, string endpoint)
         {
             string connectionString = _configuration.GetConnectionString("DbConnection")!;
             using IDbConnection connection = new SqlConnection(connectionString);
 
 
-            string query = $@"select P.id as PermissionId, F.name as FeatureName, F.endpoint as FeatureEndpoint, R.name as RoleName, R.code as RoleCode
-from ((Permissions as P 
-inner join Features as F on P.feature_id = F.id) 
-inner join Roles as R on P.role_id = R.id) 
-where R.id = @RoleId and F.endpoint = @Endpoint";
+            string query = $@"select P.UserPermissionId as UserPermissionId, F.Name as Feature, F.EndPoint as EndPoint, R.RoleName as RoleName, R.RoleCode as RoleCode
+from ((Permission as P 
+inner join Feature as F on P.FeatureId = F.FeatureId) 
+inner join Role as R on P.RoleId = R.RoleId) 
+where R.RoleCode = @RoleCode and F.EndPoint = @Endpoint";
 
-            var permissionModel = await connection.QueryFirstOrDefaultAsync<PermissionModel>(query, new { RoleId = roleId, Endpoint = endpoint });
+            var permissionModel = await connection.QueryFirstOrDefaultAsync<PermissionModel>(query, new { RoleCode = roleCode, Endpoint = endpoint });
 
             return permissionModel!;
         }

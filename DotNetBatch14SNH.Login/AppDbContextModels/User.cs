@@ -1,15 +1,17 @@
-﻿namespace DotNetBatch14SNH.Login.AppDbContextModels
+﻿using System;
+using System.Collections.Generic;
+
+namespace DotNetBatch14SNH.Login.AppDbContextModels;
+
+public partial class User
 {
-    public class User
-    {
-        public string Id { get; set; } = null!;
+    public string UserId { get; set; } = null!;
 
-        public string Name { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
-        public string Email { get; set; } = null!;
+    public string Password { get; set; } = null!;
 
-        public string Password { get; set; } = null!;
+    public string RoleCode { get; set; } = null!;
 
-        public string RoleId { get; set; } = null!;
-    }
+    public string Email { get; set; } = null!;
 }

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetBatch14SNH.Login.Fearures.ProductList
 {
-    [Route("api/[controller]")]
+    [Route("api/product")]
     [ApiController]
     public class ProductListController : ControllerBase
     {

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetBatch14SNH.Login.Fearures.CategoryList
 {
-    [Route("api/[controller]")]
+    [Route("api/category")]
     [ApiController]
     public class CategoryListController : ControllerBase
     {

@@ -1,11 +1,13 @@
-﻿namespace DotNetBatch14SNH.Login.AppDbContextModels
+﻿using System;
+using System.Collections.Generic;
+
+namespace DotNetBatch14SNH.Login.AppDbContextModels;
+
+public partial class Role
 {
-    public class Role
-    {
-        public string Id { get; set; } = null!;
+    public string RoleId { get; set; } = null!;
 
-        public string Code { get; set; } = null!;
+    public string RoleCode { get; set; } = null!;
 
-        public string Name { get; set; }
-    }
+    public string RoleName { get; set; } = null!;
 }

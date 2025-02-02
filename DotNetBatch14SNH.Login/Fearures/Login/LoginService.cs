@@ -42,10 +42,10 @@ namespace DotNetBatch14SNH.Login.Fearures.Login
 
                 LoginTokenModel tokenModel = new()
                 {
-                    UserId = user.Id,
+                    UserId = user.UserId,
                     Email = user.Email,
                     Name = user.Name,
-                    RoleId = user.RoleId,
+                    RoleCode = user.RoleCode,
                     ExpireTime = DateTime.Now.AddMinutes(5),
                 };
 

@@ -1,11 +1,13 @@
-﻿namespace DotNetBatch14SNH.Login.AppDbContextModels
+﻿using System;
+using System.Collections.Generic;
+
+namespace DotNetBatch14SNH.Login.AppDbContextModels;
+
+public partial class Feature
 {
-    public class Feature
-    {
-        public string Id { get; set; } = null!;
+    public string FeatureId { get; set; } = null!;
 
-        public string Name { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
-        public string Endpoint { get; set; } = null!;
-    }
+    public string EndPoint { get; set; } = null!;
 }

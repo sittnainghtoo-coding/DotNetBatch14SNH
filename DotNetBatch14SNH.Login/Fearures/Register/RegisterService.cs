@@ -24,7 +24,7 @@ namespace DotNetBatch14SNH.Login.Fearures.Register
 
                 string hashPassword = DevCode.HashPassword(combined);
 
-                var role = await _db.Roles.FirstOrDefaultAsync(x => x.Name == requestModel.Role);
+                var role = await _db.Roles.FirstOrDefaultAsync(x => x.RoleName == requestModel.Role);
                 if (role is null)
                 {
                     response.Success = false;
@@ -44,11 +44,11 @@ namespace DotNetBatch14SNH.Login.Fearures.Register
 
                 User newUser = new()
                 {
-                    Id = userId,
+                    UserId = userId,
                     Name = requestModel.Username,
                     Email = requestModel.Email,
                     Password = hashPassword,
-                    RoleId = role.Id
+                    RoleCode = role.RoleCode
                 };
 
                 await _db.Users.AddAsync(newUser);
@@ -61,7 +61,7 @@ namespace DotNetBatch14SNH.Login.Fearures.Register
                     Id = userId,
                     Name = requestModel.Username,
                     Email = requestModel.Email,
-                    Role = role.Name
+                    Role = role.RoleName
                 };
                 return response;
             }
